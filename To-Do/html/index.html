@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>To Do</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <form action="" id="formulario">
+                            <label for="">Actividad a realizar</label>
+                            <input type="text" class="form-control" placeholder="Ingresa la actividad a realizar" id="txActividad">
+                            <button type='submit' class="mt-2 btn btn-outline-info btn-block">Agregar Actividad</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-6">
+                    <h2>Actividades Pendientes: </h2>
+
+                    <ul id="lista-pendientes" class="list-group"></ul>
+                </div>
+
+                <div class="col-6">
+                    <h2>Actividades Finalizadas: </h2>
+
+                    <ul id="lista-terminadas" class="list-group"></ul>
+
+                    <button class="btn btn-outline-danger btn-block mt-3" id="btnLimpiar">Limpiar Tareas Terminadas</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./../js/LocalStorage.class.js"></script>
+    <script src="./../js/Actividades.class.js"></script>
+    <script src="./../js/app.js"></script>
+</body>
+
+</html>
