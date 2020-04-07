@@ -1,9 +1,13 @@
-const tablaCarrito = document.querySelector('#lista-carrito tbody')
+const tablaCarrito = document.querySelector('#lista-carrito tbody');
 
 eventListener();
 
 function eventListener() {
     document.querySelector('#lista-cursos').addEventListener('click', GuardarCursoCarrito);
+
+    document.querySelector('#carrito').addEventListener('click', EliminarCarrito);
+
+    document.querySelector('#vaciar-carrito').addEventListener('click', VaciarCarrito);
 
     IniciarCarrito();
 }
@@ -29,4 +33,15 @@ function IniciarCarrito() {
         const carrito = new Carrito();
         carrito.AgregarCarrito(cursosLS[i], tablaCarrito, false);
     }
+}
+
+function EliminarCarrito(event) {
+    if (event.target.className !== 'borrar-curso') return;
+
+    Carrito.EliminarCursoCarrito(event.target.parentElement.parentElement);
+
+}
+
+function VaciarCarrito() {
+    Carrito.VaciarCarrito(tablaCarrito);
 }

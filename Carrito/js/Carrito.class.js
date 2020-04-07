@@ -2,6 +2,7 @@ class Carrito {
 
 
     AgregarCarrito(informacionCurso, tablaCarrito, origen) {
+        if (LocalStorageManipular.VerificarCursoRepetido(informacionCurso.id) && origen) return;
         const tableRow = document.createElement('tr');
         tableRow.innerHTML = `
             <td>
@@ -21,5 +22,19 @@ class Carrito {
         tablaCarrito.appendChild(tableRow);
 
         if (origen) LocalStorageManipular.AgregarLocalStorage(informacionCurso);
+    }
+
+    static EliminarCursoCarrito(nodeDom) {
+        const idCurso = nodeDom.querySelector('.borrar-curso').getAttribute('data-id');
+        LocalStorageManipular.EliminarCursoLocalStorage(idCurso);
+        nodeDom.remove();
+    }
+
+    static VaciarCarrito(TablaCursos) {
+        while (TablaCursos.firstChild) {
+            TablaCursos.firstChild.remove();
+        }
+
+        LocalStorageManipular.VaciarCarritoLocalStorage();
     }
 }
