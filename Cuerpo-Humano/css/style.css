@@ -1,0 +1,16 @@
+body {
+    overflow: hidden;
+    min-height: 556px;
+    min-width: 924px;
+}
+
+.container {
+    position: relative;
+    min-height: 556px;
+    min-width: 924px;
+}
+
+img {
+    width: 400px;
+    height: 400px;
+}
